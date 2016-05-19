@@ -1,12 +1,7 @@
-# docker.flask_service_boilerplate
+# docker.sbs_flask_api
 
-A bare bones python Docker setup to support local and production development from a single ops base. A super simple Flask app is contained in the `app/` directory for demo purposes, but this can easily be switched for any WSGI compatible application.
-
-
-## Adding your app
-
-Just put your flask app under the `app` folder. make sure your starting point is `app/app.py` and u r good 2 go
-
+Dockerfiles to control a [flask.SBS_API](https://github.com/wakaru44/flask.sbs_api). A simple api to sit behind the Single Button Stack app.
+It launches an AWS stack with a simple click.
 
 ## Steps to run
 
