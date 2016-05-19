@@ -1,8 +1,10 @@
 help:
-	@echo "build-local - Build container for local development"
+	@echo "build-local  - Build container for local development"
 	@echo "build-deploy - Build container in production mode"
-	@echo "run-local - Run container for local development"
-	@echo "run-deploy - Run container for in production mode"
+	@echo "run-local    - Run container for local development"
+	@echo "run-deploy   - Run container for in production mode"
+	@echo "clone        - clone the repo in the app folder"
+	@echo "update       - Update the application code"
 
 build-base:
 	cd ops/base/; docker build -t="wakaru44/python-base" .
@@ -18,3 +20,9 @@ run-local: build-local
 
 run-deploy: build-deploy
 	docker run -P -t -i -v $(CURDIR)/app:/opt/app wakaru44/python-deploy
+
+clone:
+	cd app; git clone https://github.com/wakaru44/flask.sbs_api.git; cd ..
+
+update:
+	cd app; git pull; cd ..
